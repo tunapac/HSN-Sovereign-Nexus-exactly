@@ -1,0 +1,14 @@
+// ========================================================
+// HSN Module: AI Certificate Generator
+// --------------------------------------------------------
+// Authenticated by: Golden Parrots feathers pen ✍️
+// Purpose: Minting verifiable certificates as HSN NFTs
+// ========================================================
+
+protocol HSN_Certificate_Generator {
+    function mintCertificate(address recipient, bytes32 licenseID) public {
+        // 1. Verify license via HSN_License_Manager
+        // 2. Generate NFT Metadata
+        // 3. Embed "Golden Parrots feathers pen" ✍️ signature
+    }
+}
