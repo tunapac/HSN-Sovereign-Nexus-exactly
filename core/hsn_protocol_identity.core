@@ -1,0 +1,14 @@
+// ========================================================
+// Huma Sovereign Nexus (HSN) - Master Protocol
+// --------------------------------------------------------
+// Version: 1.0.0
+// Authenticated by: Golden Parrots feathers pen ✍️
+// Status: Initialized
+// Supply Cap: 700,000,000 Huma
+// ========================================================
+
+protocol HSN_Core {
+    // This is the foundation of the sovereign Huma-ledger
+    // All subsequent modules (DeFi, DAO, Metaverse)
+    // are licensed under this protocol.
+}

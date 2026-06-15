@@ -2,19 +2,21 @@
 pragma solidity ^0.8.20;
 
 contract HumaLedger {
+    // Native Huma-coin supply cap
     uint256 public constant TOTAL_SUPPLY = 700000000;
-    mapping(string => address) public domainOwners;
-    
-    event DomainRegistered(string domain, address owner);
+    mapping(address => uint256) public balances;
 
-    function registerDomain(string memory _domain) public {
-        require(domainOwners[_domain] == address(0), "Domain already taken.");
-        domainOwners[_domain] = msg.sender;
-        emit DomainRegistered(_domain, msg.sender);
-    }
-    
-    function verifyIdentity(address _identity) public view returns (bool) {
-        // Validation logic for 150M tower authentication
-        return true; 
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event TokensBurned(address indexed burner, uint256 value);
+
+    // Native Huma-coin burn mechanism
+    function burnNative(uint256 _amount) public {
+        require(balances[msg.sender] >= _amount, "Insufficient Huma-coin balance");
+        
+        balances[msg.sender] -= _amount;
+        // Supply of native Huma-coin is reduced directly on the Humanledger
+        // Total supply management handled at the chain-state level
+        
+        emit TokensBurned(msg.sender, _amount);
     }
 }
